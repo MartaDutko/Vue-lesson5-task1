@@ -1,17 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <favorite-card-list :cards-list="favoriteSources"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FavoriteCardList from "./components/FavoriteCardList.vue";
+import { favoriteSources } from "./constans/1_data_google_favorite";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    FavoriteCardList,
+  },
+  data() {
+    return {
+      favoriteSources,
+    };
+  },
+};
 </script>
 
 <style>
